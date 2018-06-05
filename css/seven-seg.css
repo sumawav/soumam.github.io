@@ -1,0 +1,58 @@
+@font-face{
+    font-family: "DSEG";
+    src: url('DSEG14Modern-Bold.ttf');
+}
+
+.seven-seg-display {
+    display: inline-block;
+    position: relative;
+    margin: 10px auto;
+    font-family: "DSEG";
+    font-size: 30px;
+    background-color: black;
+    border: 4px solid #000;
+    border-radius: 5px;
+    height: 72px;
+    width: 200px;
+    margin-left:10px;
+    overflow-x: visible;
+}
+
+.seven-seg-display .top-row-bg {
+    position: absolute;
+    z-index: 50;
+    height: 30px;
+    top: 3px;
+    left: 3px;
+    color: hsl(34, 100%, 9%)
+}
+.seven-seg-display .bottom-row-bg {
+    position: absolute;
+    z-index: 50;
+    height: 30px;
+    bottom: 3px;
+    left: 3px;
+    color: hsl(34, 100%, 9%)
+}
+.seven-seg-display .top-row {
+    position: absolute;
+    z-index: 100;
+    height: 30px;
+    top: 3px;
+    left: 3px;
+    color: hsl(34, 100%, 49%)
+}
+.seven-seg-display .bottom-row {
+    position: absolute;
+    z-index: 100;
+    height: 30px;
+    bottom: 3px;
+    left: 3px;
+    color: hsl(34, 100%, 49%)
+}
+
+@media only screen and (max-width: 855px){
+    .seven-seg-display {
+        display: none;
+    }
+}

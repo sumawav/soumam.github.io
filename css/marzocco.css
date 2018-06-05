@@ -1,0 +1,246 @@
+@font-face{
+    font-family: "magneto";
+    src: url('MagnetoBold.ttf');
+}
+
+header {
+    background-color: hsl(0,0%,80%);
+    box-shadow: 0px 30px 80px #222222;
+    border-bottom: 2px hsl(0,0%,40%) solid;
+    border-top: 2px hsl(0,0%,70%) solid;
+    border-radius: 5px;
+}
+.souma {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 3px;
+}
+.souma p {
+    font-family: magneto;
+    color: red;
+    font-size: 35px;
+    background: -webkit-linear-gradient(red, rgb(210,0,0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* for Rachel */
+@media only screen and (max-width: 320px){
+    .souma p {
+        font-size: 30px;
+    }
+}
+.button-holder {
+    padding: 5px;
+    margin-left: 20px;
+}
+.button-holder a{
+    display: inline-block;
+}
+.button-holder a i{
+    margin-top: 30px;
+}
+.button-holder .with-gap {
+    margin-right: 20px;
+}
+.mobile-burger {
+    display: none;
+}
+.mobile-menu {
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    .button-holder {
+        display: none;
+    }
+    .mobile-burger {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+    header.header-metal {
+        height: 70px;
+    }
+    .mobile-menu {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile-menu.hide {
+        display: none;
+    }
+    .mobile-menu.header-metal a i{
+        margin-top: 30px;
+    }
+}
+
+.well {
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+/*
+    originally from: 
+    https://codepen.io/simurai/pen/DwJdq
+*/
+
+/* globals */
+html {
+  background-color: hsla(0,0%,60%,1);  
+  /* background-image: linear-gradient(-45deg, hsla(0,0%,0%,0), hsla(0,0%,0%,.05) ); */
+  background-size: 5px;
+}
+button { 
+    border: none; 
+    display: inline-block;
+    vertical-align: top;
+    /* -webkit-appearance: none;
+    appearance: none; */
+}
+a { 
+    text-decoration: none; 
+    display: inline-block; 
+    vertical-align: top;
+}
+/* Metal ------------------------- */
+.header-metal {
+    background-image:
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+    hsl(0,0%,90%) 47%, 
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);    
+}
+.metal {
+    position: relative;
+    margin: 10px auto;
+    outline: none;
+    padding:0px;
+    font: bold 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-align: center;
+    color: hsla(0,0%,20%,1);
+    text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+
+    background-color: hsl(0,0%,90%);
+    box-shadow: 
+        inset hsla(0,0%,15%,  1) 0  0px 0px 4px, /* border */
+        inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+        inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+        inset hsla(0,0%,100%,.7) 0  2px 1px 7px, /* top HL */
+        hsla(0,0%, 0%,.15) 0 -5px 6px 4px, /* outer SD */
+        hsla(0,0%,100%,.5) 0  5px 6px 4px; /* outer HL */ 
+
+    transition: color .2s;
+}
+/* Radial ------------------------- */
+.radial.metal {
+  width: 80px;
+  height: 80px;
+  /* line-height: 160px; */
+  border-radius: 80px;
+}
+.radial.metal.shiny-face {
+    background-image: -webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%),
+    
+    -webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
+}
+.metal.radial:before, .metal.radial:after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  
+    /* fake conical gradients */
+/*     
+    background-image: -webkit-radial-gradient(  50%   0%, 10% 50%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+        -webkit-radial-gradient(  50% 100%, 10% 50%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+        -webkit-radial-gradient(   0%  50%, 50% 10%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+        -webkit-radial-gradient( 100%  50%, 50% 06%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%);
+    */
+    
+}
+.metal.radial:before { transform: rotate( 65deg); }
+.metal.radial:after { transform: rotate(-65deg); }
+/* Linear ------------------------- */
+.metal.linear {
+  width: 40px;
+  font-size: 33px;
+  height: 40px;
+  border-radius: 5px;
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+    
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+    hsl(0,0%,90%) 47%, 
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+}
+/* Oval ------------------------- */
+.metal.linear.oval {
+  margin-top: 100px;
+  width: 70px;
+  height: 60px;
+  line-height: 60px !important;
+  border-radius: 50%;
+  font: italic bold 3em/50px Georgia, "Times New Roman", Times, serif;
+}
+/* active ------------------------- */
+.metal:hover,
+.metal.active {
+  color: hsl(10, 100%, 40%);
+  text-shadow: hsla(10,100%,20%,.3) 0 -1px 0, hsl(10,100%,85%) 0 2px 1px, hsla(0,100%,80%,1) 0 0 5px, hsla(10,100%,50%,.6) 0 0 20px;
+  box-shadow: 
+    inset hsla(10,100%,40%,  1) 0  0px 0px 4px, /* border */
+    inset hsla(10,100%,25%, .4) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(10,100%,30%,.25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(10,100%,100%,.7) 0  2px 1px 7px, /* top HL */
+    
+    hsla(10,100%,75%, .8) 0  0px 3px 2px, /* outer SD */
+    hsla(10,50%,40%, .25) 0 -5px 6px 4px, /* outer SD */
+    hsla(10,80%,95%,   1) 0  5px 6px 4px; /* outer HL */
+}
+/* rivet unfinished */
+.rivet {
+    position: relative;
+    margin: 10px auto;
+    outline: none;
+    
+    font: bold 6em/2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-align: center;
+    color: hsla(0,0%,20%,1);
+    text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+    
+    background-color: hsl(0,0%,90%);
+    box-shadow: 
+        inset hsla(0,0%,15%,  1) 0  0px 0px 4px, /* border */
+        inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+        inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+        inset hsla(0,0%,100%,.7) 0  2px 1px 7px; /* top HL */
+
+    
+    transition: color .2s;
+}
+.radial.rivet {
+    width: 10px;
+    height: 12px;
+    line-height: 160px;
+    border-radius: 80px;
+}
