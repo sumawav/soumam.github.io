@@ -53,10 +53,15 @@ const fetchBlog = () => {
         .then(createBlogPostContainer)
         .then(addToPage)
 }
+const fetchGames = () => {
+    fetchBlogPost("games.md")
+        .then(createBlogPostContainer)
+        .then(addToPage)
+}
 
 // START HERE
 window.addEventListener("load", () => { 
     init()
-    fetchBlog();
+    fetchGames();
 })
 
