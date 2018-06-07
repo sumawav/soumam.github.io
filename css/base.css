@@ -70,6 +70,14 @@ h3 {
     .content, .sidebar { float: none; width: auto; }
 }
 
+/* no-mobile: hidden on mobile devices */
+@media (max-width: 400px) {
+    .no-mobile {
+        display:none;
+    }
+}
+
+
 
 .float-right {
     float: right;

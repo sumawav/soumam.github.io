@@ -5,8 +5,8 @@
 
 Space Cats is a vertical Shoot em Up style game written entirely in Javascript.
 
-## Eastern European Building Simulator
-[play here](https://soumam.github.io/eebs)
+
+## Eastern European Building [Simulator](https://soumam.github.io/eebs)
 ###### *AKA каменная кладка*
 [![eebs](img/eebs.png "каменная кладка")](https://soumam.github.io/eebs)
 
