@@ -3,7 +3,19 @@ const blogLink = document.getElementById("blog")
 const aboutLink = document.getElementById("about")
 const title = document.getElementById("title")
 
-const converter = new showdown.Converter()
+
+// Extension
+showdown.extension('targetlink', function () {
+    return [{
+        type: 'html',
+        regex: /(<a [^>]+?)(>.*<\/a>)/g,
+        replace: '$1 target="_blank"$2'
+    }];
+});
+
+const converter = new showdown.Converter({
+    extensions: ['targetlink']
+});
 
 const addToPage = (element, destination) => {
     destination = destination || document.getElementById("view")
