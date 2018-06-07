@@ -1,0 +1,7 @@
+# HI I'M SOUMA
+
+##### *Nice to Meetcha*
+
+I'm a game developer/designer living in Austin, TX.
+
+I enjoy making games and solving problems. I built this blog to have a place to display my games and share the stories behind them.

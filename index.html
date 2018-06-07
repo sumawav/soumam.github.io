@@ -4,68 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Games</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/marzocco.css">
-    <link rel="stylesheet" href="css/seven-seg.css">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/base.css">    
 </head>
 <body>
-    <header class="header-metal" style="margin-bottom: 40px;">
-        <div class="souma">
-                <p>Souma Mondal</p>
+    <div class="header">
+        <h1 id="title">SOUMA'S BLOG</h1>
+        <hr>
+    </div>
+    <div class="sidebar">
+        <div>
+            <h3>Quick Links</h3>
+            <ul class="nostyle" style="padding: 0;">
+                <li><a id="games" data-postname="games.md" class="spread-link" href="#">GAMES</a></li>
+                <li><a id="blog" class="spread-link" href="#">BLOG</a></li>
+                <!-- <li><a class="spread-link" href="#">PROJECTS</a></li> -->
+                <li><a id="about" data-postname="about.md"class="spread-link" href="#">ABOUT</a></li>
+            </ul>
         </div>
-        <div class="mobile-burger">
-            <a id="burger" href="javascript:void(0);" class="metal linear" onclick="burgerToggle()">
-                <i class="fas fa-bars"></i>
-            </a>
+    </div>
+    <div class="content">
+        <div id="view"></div>
+    </div>
+    <footer class="footer">
+        <div style="float: right;">
+            <p>all this is made by <a class="spread-link" target="_blank" href="https://github.com/soumam">Souma</a></p>
         </div>
-        <div class="button-holder">
-            <a id="games" class="metal radial shiny-face with-gap active" style="padding:0;" href="index.html">
-                <i class="fas fa-gamepad"></i>
-            </a>
-            <a id="blog" class="metal radial with-gap shiny-face" style="padding:0;" href="blog.html">
-                <i class="fas fa-newspaper"></i>
-            </a>
-            <a id="about" class="metal radial with-gap shiny-face" style="padding:0;" href="about.html">
-                <i class="fas fa-user"></i>
-            </a>
-            <div class="seven-seg-display">
-                <span class="top-row-bg">~~~~~~~~</span>
-                <span class="bottom-row-bg">~~~~~~~~</span>
-                <span id="top-row" class="top-row"></span>
-                <span id="bottom-row" class="bottom-row"></span>
-            </div>
-        </div>
-    </header>
-    <section id="mobile-menu" class="mobile-menu header-metal hide">
-        <a id="games" class="metal radial shiny-face with-gap active" style="padding:0;" href="index.html">
-            <i class="fas fa-gamepad"></i>
-        </a>
-        <a id="blog" class="metal radial with-gap shiny-face" style="padding:0;" href="blog.html">
-            <i class="fas fa-newspaper"></i>
-        </a>
-        <a id="about" class="metal radial with-gap shiny-face" style="padding:0;" href="about.html">
-            <i class="fas fa-user"></i>
-        </a>
-    </section>
-    <section>
-        <div class="well">
-            <h1>
-                <a href="http://soumam.github.io/space-cats">Space Cats</a>
-            </h1>
-        </div>
-        <div class="well">
-            <h1>
-                <a href="http://soumam.github.io/eebs">Russian Collusion Simulator</a>
-            </h1>
-        </div>
-    </section>
-    <script src="scrolltext.js"></script>
-    <script src="buttons.js"></script>
-    <script>
-        setScrollText("games", true)
-        setScrollText("         some of them are pretty good, probably", false)
-    </script>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 </html>
