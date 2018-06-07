@@ -11,7 +11,7 @@ h1 {
 @media (max-width: 900px) {
     html { font-size: 15px; }
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     html { font-size: 13px; }
 }
 
@@ -37,7 +37,7 @@ h2 {
 h3 {
     font-size: 2em;
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     h1 {
         font-size: 2.5em;
     }
@@ -66,12 +66,12 @@ h3 {
     .content { width: 60%; }
     .sidebar { width: 40%; }
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .content, .sidebar { float: none; width: auto; }
 }
 
 /* no-mobile: hidden on mobile devices */
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .no-mobile {
         display:none;
     }
@@ -82,7 +82,7 @@ h3 {
 ul.nostyle{
     list-style: none;
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     ul.nostyle {
         list-style: none;
         font-size: 2em;
