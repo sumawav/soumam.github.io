@@ -6,7 +6,7 @@ It all started with this:
 
 [Alien Invasion](http://cykod.github.io/AlienInvasion/)
 
-[![AlienInvasion](img/AlienInvasion.png "less than 500 lines of code")](http://cykod.github.io/AlienInvasion/)
+
 
 That is the intro project to [Professional HTML5 Mobile Game Development](http://www.wrox.com/WileyCDA/WroxTitle/Professional-HTML5-Mobile-Game-Development.productCd-1118301323.html). One of the things I love most about this book: the very first thing you do is make a game. It happens so fast.
 
