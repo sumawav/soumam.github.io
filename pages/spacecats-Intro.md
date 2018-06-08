@@ -19,7 +19,7 @@ Some libraries I found helpful:
 I didn't find a great OOTB tool for touch controls that did exactly what I needed so I ended up making my own. I want to talk about that more but that will need to be its own post.
 
 todo:
-  * ~~scoring~~
+  * scoring
   * menu system
   * bosses
   * enemy movement
