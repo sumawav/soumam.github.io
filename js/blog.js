@@ -14,8 +14,9 @@ showdown.extension('targetlink', function () {
 });
 
 const converter = new showdown.Converter({
-    extensions: ['targetlink']
-});
+    // extensions: ['targetlink'],
+    strikethrough: true
+})
 
 const addToPage = (element, destination) => {
     destination = destination || document.getElementById("view")
@@ -44,8 +45,8 @@ const fetchBlogPosts = (filesArray) => {
     return Promise.all(promises)
 }
 
-const clearView = (destination) => {
-    destination = destination || document.getElementById("view")
+const clearView = () => {
+    destination = document.getElementById("view")
     destination.innerHTML = ""
 }
 
@@ -70,25 +71,42 @@ const loadPosts = (filesArray, noclear) => {
         })
 }
 
+
+function locationHashChanged() {
+    if (!location.hash)
+        return false
+    switch (location.hash){
+        case "#blog":
+            loadPosts(["spacecats-intro.md", "startblog.md"])
+            break
+        default:
+            hashTravel()
+    }
+    return true
+}
+
+window.onhashchange = locationHashChanged;
+
+const hashTravel = () => {
+        loadPost(location.hash.slice(1) + ".md")
+}
+
 const init = () => {
     gamesLink.addEventListener("click", (e) => {
-        loadPost("games.md")
         changeTitle("SOUMA'S GAMES")
     })
-    aboutLink.addEventListener("click", (e) => {
-        loadPost("about.md")
-        changeTitle("ABOUT SOUMA")
-    })
     blogLink.addEventListener("click", (e) => {
-        loadPost("startblog.md")
         changeTitle("SOUMA'S BLOG")
+    })
+    aboutLink.addEventListener("click", (e) => {
+        changeTitle("SOUMA'S ABOUT")
     })
 }
 
 // START HERE
 window.addEventListener("load", () => { 
     init()
-    loadPost("games.md");
-    // loadPosts(["about.md", "games.md", "startblog.md"])
+    if( !locationHashChanged() )
+        loadPost("games.md");
 })
 

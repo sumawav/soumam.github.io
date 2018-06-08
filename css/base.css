@@ -91,17 +91,28 @@ ul.nostyle{
         display: inline-block;
     }
 }
-a {
+a,
+.spread-link {
     color: blue;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     -webkit-transition: letter-spacing 1s;
     transition: letter-spacing 1s;
     -moz-transition: letter-spacing 1s;
 }
-a:hover{
+a:hover,
+.spread-link:hover{
     letter-spacing: 5px;
 } 
 
 img {
     max-width: 300px;;
+}
+
+.blogpost {
+    padding-bottom: 10px;
+    border-bottom: solid #ccc 1px;
+    margin-bottom: 10px;
+}
+.blogpost:last-child {
+    border-bottom: none;
 }
