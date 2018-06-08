@@ -71,7 +71,6 @@ const loadPosts = (filesArray, noclear) => {
         })
 }
 
-
 function locationHashChanged() {
     if (!location.hash)
         return false
@@ -97,12 +96,15 @@ const init = () => {
         loadPost("games.md")
     })
     blogLink.addEventListener("click", (e) => {
-        changeTitle("SOUMA'S BLOG")
+        changeTitle("SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp")
         loadPosts(["spacecats-Intro.md", "startblog.md"])
     })
     aboutLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S ABOUT")
         loadPost("about.md")
+    })
+    title.addEventListener("click", (e) => {
+        document.location.href="/"
     })
 }
 

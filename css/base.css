@@ -118,3 +118,7 @@ img {
 .blogpost:last-child {
     border-bottom: none;
 }
+
+#title {
+    cursor: pointer;
+}
