@@ -8,3 +8,4 @@ I enjoy making games and solving problems. I built this blog to have a place to 
 
 [github](https://github.com/soumam)
 [linkedIn](https://www.linkedin.com/in/souma-mondal-a8aab749/)
+[resume](https://resume.creddle.io/embed/bxpncg3nhc6)
