@@ -94,12 +94,15 @@ const hashTravel = () => {
 const init = () => {
     gamesLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S GAMES")
+        loadPost("games.md")
     })
     blogLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S BLOG")
+        loadPosts(["spacecats-Intro.md", "startblog.md"])
     })
     aboutLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S ABOUT")
+        loadPost("about.md")
     })
 }
 

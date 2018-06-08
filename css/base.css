@@ -94,6 +94,8 @@ ul.nostyle{
 a,
 .spread-link {
     color: blue;
+    text-decoration: underline;
+    cursor: pointer;
     /* text-transform: uppercase; */
     -webkit-transition: letter-spacing 1s;
     transition: letter-spacing 1s;
