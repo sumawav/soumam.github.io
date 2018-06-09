@@ -46,7 +46,7 @@ const fetchBlogPost = (mdFileName) => {
     })
     .catch((error) => {
         console.log(error)
-        return false;
+        return ""
     })
 }
 const fetchBlogPosts = (filesArray) => {
@@ -80,7 +80,7 @@ function locationHashChanged() {
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["spa.md", "spacecats-intro.md", "startblog.md"])
+            loadPosts(["spa.md", "spacecats_intro.md", "startblog.md"])
             break
         default:
         loadPost(location.hash.slice(1) + ".md")
