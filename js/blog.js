@@ -76,33 +76,33 @@ function locationHashChanged() {
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["spacecats-Intro.md", "startblog.md"])
+            loadPosts(["lunr.md", "spacecats-Intro.md", "startblog.md"])
             break
         default:
-            hashTravel()
+        loadPost(location.hash.slice(1) + ".md")
     }
     return true
 }
 
 window.onhashchange = locationHashChanged;
 
-const hashTravel = () => {
-        loadPost(location.hash.slice(1) + ".md")
+const redirect = (hash) => {
+    location.hash = hash
 }
-
 
 const init = () => {
     gamesLink.addEventListener("click", (e) => {
+        e.preventDefault(e)
         changeTitle("SOUMA'S GAMES")
-        location.hash = "games"
+        redirect("games")
     })
     blogLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp")
-        location.hash = "blog"
+        redirect("blog")
     })
     aboutLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S ABOUT")
-        location.hash = "about"
+        redirect("about")
     })
     title.addEventListener("click", (e) => {
         document.location.href="/"
