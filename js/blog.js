@@ -39,7 +39,15 @@ const fetchBlogPost = (mdFileName) => {
     return fetch(pathPre + mdFileName, {
         method: "GET"
     })
-    .then((data) => data.text())
+    .then((data) => {
+        if( data.ok)
+            return data.text()
+        throw new Error("Problem retrieving: " + mdFileName)
+    })
+    .catch((error) => {
+        console.log(error)
+        return false;
+    })
 }
 const fetchBlogPosts = (filesArray) => {
     let promises = filesArray.map((e) => {
@@ -59,9 +67,10 @@ const loadPosts = (filesArray, noclear) => {
     if (!noclear)
         clearView()
     fetchBlogPosts(filesArray)
-        .then((text) => {
-            text.forEach((e) => {
-                addToPage(createBlogPostContainer(e))
+        .then((posts) => {
+            posts.forEach((post) => {
+                if (post)
+                    addToPage(createBlogPostContainer(post))
             })
         })
 }
@@ -71,7 +80,7 @@ function locationHashChanged() {
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["spa.md", "spacecats-Intro.md", "startblog.md"])
+            loadPosts(["spa.md", "spacecats-intro.md", "startblog.md"])
             break
         default:
         loadPost(location.hash.slice(1) + ".md")

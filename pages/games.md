@@ -3,7 +3,7 @@
 [![space cats](img/space_cats.png "not to be confused with Swat Cats")](https://soumam.github.io/space-cats)
 
 
-Space Cats is a vertical Shoot em Up style game written entirely in Javascript. [Read More >>](#spacecats-Intro)
+Space Cats is a vertical Shoot em Up style game written entirely in Javascript. [Read More >>](#spacecats-intro)
 
 
 ## Eastern European Building [Simulator](https://soumam.github.io/eebs)
