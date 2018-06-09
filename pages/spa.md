@@ -14,4 +14,4 @@ Solution: The url#hash is now used to route to posts. There's a handy ```window.
 [link title](#<post-title-here>)
 ```
 
-Boom. The [Read More>>](#games) link in the games post can now link directly to the [SPACE CATS](#spacecats-intro) post.
+Boom. The [Read More>>](#games) link in the games post can now link directly to the [SPACE CATS](#spacecats-Intro) post.
