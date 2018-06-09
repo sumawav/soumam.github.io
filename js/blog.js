@@ -76,7 +76,7 @@ function locationHashChanged() {
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["lunr.md", "spacecats-Intro.md", "startblog.md"])
+            loadPosts(["spa.md", "spacecats-Intro.md", "startblog.md"])
             break
         default:
         loadPost(location.hash.slice(1) + ".md")
