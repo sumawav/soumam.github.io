@@ -1,10 +1,4 @@
-const gamesLink = document.getElementById("games")
-const blogLink = document.getElementById("blog")
-const aboutLink = document.getElementById("about")
-const title = document.getElementById("title")
-
-
-// Extension
+// target link extension for Showdown
 showdown.extension('targetlink', function () {
     return [{
         type: 'html',
@@ -12,13 +6,11 @@ showdown.extension('targetlink', function () {
         replace: '$1 target="_blank"$2'
     }];
 });
-
+// create Showdown instance
 const converter = new showdown.Converter({
     // extensions: ['targetlink'],
     strikethrough: true
 })
-
-
 // DOM Manipulation methods
 const addToPage = (element, destination) => {
     destination = destination || document.getElementById("view")
@@ -73,7 +65,7 @@ const loadPosts = (filesArray, noclear) => {
             })
         })
 }
-// routing
+// routing/navigation
 function locationHashChanged() {
     if (!location.hash)
         return false
@@ -90,25 +82,24 @@ window.onhashchange = locationHashChanged;
 const redirect = (hash) => {
     location.hash = hash
 }
+const redirectVerbose = (event, hash, newTitle) => {
+    event.preventDefault()
+    if(newTitle)
+        changeTitle(newTitle)
+    redirect(hash)
+    window.scrollTo(0,0)
+}
 
 // initialization
 const init = () => {
-    gamesLink.addEventListener("click", (e) => {
-        e.preventDefault(e)
-        changeTitle("SOUMA'S GAMES")
-        redirect("games")
-        window.scrollTo(0, 0)
-    })
-    blogLink.addEventListener("click", (e) => {
-        changeTitle("SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp")
-        redirect("blog")
-        window.scrollTo(0, 0)
-    })
-    aboutLink.addEventListener("click", (e) => {
-        changeTitle("SOUMA'S ABOUT")
-        redirect("about")
-        window.scrollTo(0, 0)
-    })
+    const title = document.getElementById("title")
+    const gamesLink = document.getElementById("games")
+    const blogLink = document.getElementById("blog")
+    const aboutLink = document.getElementById("about")
+
+    gamesLink.addEventListener("click", (e) => redirectVerbose(e, "games", "SOUMA'S GAMES"))
+    blogLink.addEventListener("click", (e) => redirectVerbose(e, "blog", "SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp"))
+    aboutLink.addEventListener("click", (e) => redirectVerbose(e, "about", "SOUMA'S ABOUT"))
     title.addEventListener("click", (e) => {
         document.location.href="/"
         window.scrollTo(0, 0)
