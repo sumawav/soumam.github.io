@@ -18,9 +18,21 @@ const converter = new showdown.Converter({
     strikethrough: true
 })
 
+
+// DOM Manipulation methods
 const addToPage = (element, destination) => {
     destination = destination || document.getElementById("view")
     destination.appendChild(element)
+    return false
+}
+const clearView = () => {
+    destination = document.getElementById("view")
+    destination.innerHTML = ""
+    return false
+}
+const changeTitle = (text) => { 
+    title.innerHTML = text || "SOUMA'S STUFF"
+    return false
 }
 
 const createBlogPostContainer = (text) => {
@@ -29,7 +41,7 @@ const createBlogPostContainer = (text) => {
     div.innerHTML = converter.makeHtml(text)
     return div
 }
-
+// getting data
 const fetchBlogPost = (mdFileName) => {
     let pathPre = "pages/"
     return fetch(pathPre + mdFileName, {
@@ -37,21 +49,13 @@ const fetchBlogPost = (mdFileName) => {
     })
     .then((data) => data.text())
 }
-
 const fetchBlogPosts = (filesArray) => {
     let promises = filesArray.map((e) => {
         return fetchBlogPost(e)
     })
     return Promise.all(promises)
 }
-
-const clearView = () => {
-    destination = document.getElementById("view")
-    destination.innerHTML = ""
-}
-
-const changeTitle = (text) => { title.innerHTML = text || "SOUMA'S STUFF"}
-
+// displaying data
 const loadPost = (fileName, noclear) => {
     if (!noclear)
         clearView()
@@ -59,7 +63,6 @@ const loadPost = (fileName, noclear) => {
         .then(createBlogPostContainer)
         .then(addToPage)
 }
-
 const loadPosts = (filesArray, noclear) => {
     if (!noclear)
         clearView()
@@ -70,7 +73,7 @@ const loadPosts = (filesArray, noclear) => {
             })
         })
 }
-
+// routing
 function locationHashChanged() {
     if (!location.hash)
         return false
@@ -83,35 +86,39 @@ function locationHashChanged() {
     }
     return true
 }
-
 window.onhashchange = locationHashChanged;
-
 const redirect = (hash) => {
     location.hash = hash
 }
 
+// initialization
 const init = () => {
     gamesLink.addEventListener("click", (e) => {
         e.preventDefault(e)
         changeTitle("SOUMA'S GAMES")
         redirect("games")
+        window.scrollTo(0, 0)
     })
     blogLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp")
         redirect("blog")
+        window.scrollTo(0, 0)
     })
     aboutLink.addEventListener("click", (e) => {
         changeTitle("SOUMA'S ABOUT")
         redirect("about")
+        window.scrollTo(0, 0)
     })
     title.addEventListener("click", (e) => {
         document.location.href="/"
+        window.scrollTo(0, 0)
     })
 }
 
 // START HERE
 window.addEventListener("load", () => { 
     init()
+    // on first boot load games page
     if( !locationHashChanged() )
         loadPost("games.md");
 })
