@@ -5,7 +5,7 @@
 
 
 
-Funny how thing this blog turned into an SPA. The first challenge was linking from one post to another. It seems simple enough but it turned into a [rum do](https://www.phrases.org.uk/meanings/307350.html) for a minute.
+This blog is slowly turning into a single page app (SPA). What started innocently as making a link turned into creating a rudimentary router. It seems simple enough but it turned into a [rum do](https://www.phrases.org.uk/meanings/307350.html) for a minute.
 
 Problem: Since calling a function is the only way to load posts, there is no way to link to a post in markdown. This didn't even occur to me until I wanted to link from one post to another. 
 
