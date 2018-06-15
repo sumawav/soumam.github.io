@@ -80,10 +80,11 @@ function locationHashChanged() {
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["spa.md", "spacecats_intro.md", "startblog.md"])
+            loadPosts(["touch_control.md", /*"rapid-fire.md",*/ "spa.md", "spacecats_intro.md", "startblog.md"])
             break
         default:
         loadPost(location.hash.slice(1) + ".md")
+        window.scrollTo(0,0)
     }
     return true
 }
@@ -105,9 +106,11 @@ const init = () => {
     const gamesLink = document.getElementById("games")
     const blogLink = document.getElementById("blog")
     const aboutLink = document.getElementById("about")
+    const projectsLink = document.getElementById("projects")
 
     gamesLink.addEventListener("click", (e) => redirectVerbose(e, "games", "SOUMA'S GAMES"))
     blogLink.addEventListener("click", (e) => redirectVerbose(e, "blog", "SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp"))
+    projectsLink.addEventListener("click", (e) => redirectVerbose(e, "projects", "SOUMA'S PROJECTS"))
     aboutLink.addEventListener("click", (e) => redirectVerbose(e, "about", "SOUMA'S ABOUT"))
     title.addEventListener("click", (e) => {
         document.location.href="/"

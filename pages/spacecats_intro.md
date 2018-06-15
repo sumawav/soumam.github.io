@@ -16,7 +16,7 @@ Some libraries I found helpful:
   * [tiny-canvas](https://github.com/bitnenfer/tiny-canvas) for a lightweight wrapper around webGL.
   * [bulletmljs](https://github.com/daishihmr/bulletml.js) to create bullet patterns
 
-I didn't find a great OOTB tool for touch controls that did exactly what I needed so I ended up making my own. I want to talk about that more but that will need to be its own post.
+I didn't find a great OOTB tool for touch controls that did exactly what I needed so I ended up making my own. I want to talk about that more but that will need to be its own [post](#touch_control).
 
 todo:
   * ~~scoring~~
