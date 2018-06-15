@@ -1,7 +1,7 @@
 # Touch Controls
 ![Steredenn](img/steredenn_clip.png)
 #### _"when I think about you..."_
-###### *June Xth, 2018*
+###### *June 15th, 2018*
 
 
 
