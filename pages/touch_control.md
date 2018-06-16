@@ -7,13 +7,13 @@
 
 The mobile browser is pretty sharp when it comes to multi-touch events. The API is smart enough to keep track of multiple touch events on the screen. It will deposit those events into an array (```event.touches```)
 
-So if you swipe down with three fingers, there will be three elements in the array, each corresponding to one of your fingers. It's this multitouch capability, that actually causes some confusion in our particular implementation. But first, what IS our implementation goal?
+So if you swipe down with three fingers, there will be three elements in the array, each corresponding to one of your fingers. It's this multi touch capability that actually causes some confusion in our  implementation. But first, what IS our implementation anyway?
 
 ### [Steredenn](http://steredenn.pixelnest.io/)
 
 Steredenn is a fantastic, roguelike, horizontal shooter. Like Space Cats, it also makes use of BulletML for Unity.
 
-I really like the control scheme for Steredenn. When you touch and drag on the screen, the ship matches the movements of your fingertip. To be clear, you don't have to _touch_ the ship. you can touch anywhere on the left half of the screen and as you drag the ship wll move in that direction.
+I really like the control scheme for Steredenn. When you touch and drag on the screen, the ship matches the movements of your fingertip. To be clear, you don't have to _touch_ the ship. you can touch anywhere on the left half of the screen and as you drag the ship will move in that direction.
 
 I don't think it's an exact 1-to-1 since you can't just fly all the way across the screen with a single finger swipe.
 
@@ -25,7 +25,7 @@ Here's the problem. It mostly works, but when you lift your finger and place it 
 
 _This is no bueno._
 
-So what we need to do, is make sure when a the finger touches the screen, there isn't a previous touch event to compare to. This is pretty easily accomplished by hooking into the ```event.touchend``` event. 
+So what we need to do, is make sure when your finger touches the screen, there isn't a previous touch event to compare to. This is pretty easily accomplished by hooking into the ```event.touchend``` event. 
 
 Basically, when a touch event happens in the movement control area, we destroy all touch events. This essentially enforces a single touch zone. As such, we only need to consider the first touch event in the ```event.touches``` array.
 
