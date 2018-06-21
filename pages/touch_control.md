@@ -27,7 +27,7 @@ _This is no bueno._
 
 So what we need to do, is make sure when your finger touches the screen, there isn't a previous touch event to compare to. This is pretty easily accomplished by hooking into the ```event.touchend``` event. 
 
-Basically, when a touch event happens in the movement control area, we destroy all touch events. This essentially enforces a single touch zone. As such, we only need to consider the first touch event in the ```event.touches``` array.
+Basically, when a touchend event happens in the movement control area, we destroy all touch events. This essentially enforces a single touch zone. As such, we only need to consider the first touch event in the ```event.touches``` array.
 
 This is implemented in [engine.js](https://github.com/soumam/space-cats/blob/master/js/engine.js) It's a bit of a mess right now, but I've described *basically* how it works. 
 
