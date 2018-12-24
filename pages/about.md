@@ -2,7 +2,7 @@
 
 ##### *Nice to Meetcha*
 
-I'm a game developer/designer living in Austin, TX.
+I'm a developer/game designer living in Austin, TX.
 
 I enjoy making games and solving problems. I built this blog to have a place to display my games and share the stories behind them.
 

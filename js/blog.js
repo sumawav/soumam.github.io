@@ -1,3 +1,11 @@
+const allPosts = [
+    "isometric.md",
+    "apostrophe.md", 
+    "touch_control.md", 
+    "spa.md", 
+    "spacecats_intro.md", 
+    "startblog.md",
+]
 // target link extension for Showdown
 showdown.extension('targetlink', function () {
     return [{
@@ -40,7 +48,7 @@ const fetchBlogPost = (mdFileName) => {
         method: "GET"
     })
     .then((data) => {
-        if( data.ok)
+        if(data.ok)
             return data.text()
         throw new Error("Problem retrieving: " + mdFileName)
     })
@@ -74,13 +82,16 @@ const loadPosts = (filesArray, noclear) => {
             })
         })
 }
+const loadAllPosts = () => {
+    loadPosts(allPosts)
+}
 // routing/navigation
 function locationHashChanged() {
     if (!location.hash)
         return false
     switch (location.hash){
         case "#blog":
-            loadPosts(["apostrophe.md", "touch_control.md", /*"rapid-fire.md",*/ "spa.md", "spacecats_intro.md", "startblog.md"])
+            loadPosts(allPosts)
             break
         default:
         loadPost(location.hash.slice(1) + ".md")
@@ -103,13 +114,13 @@ const redirectVerbose = (event, hash, newTitle) => {
 // initialization
 const init = () => {
     const title = document.getElementById("title")
-    const gamesLink = document.getElementById("games")
     const blogLink = document.getElementById("blog")
+    const gamesLink = document.getElementById("games")
     const aboutLink = document.getElementById("about")
     const projectsLink = document.getElementById("projects")
 
-    gamesLink.addEventListener("click", (e) => redirectVerbose(e, "games", "SOUMA'S GAMES"))
     blogLink.addEventListener("click", (e) => redirectVerbose(e, "blog", "SOUMA'S BLOG&nbsp&nbsp&nbsp&nbsp"))
+    gamesLink.addEventListener("click", (e) => redirectVerbose(e, "games", "SOUMA'S GAMES"))
     projectsLink.addEventListener("click", (e) => redirectVerbose(e, "projects", "SOUMA'S PROJECTS"))
     aboutLink.addEventListener("click", (e) => redirectVerbose(e, "about", "SOUMA'S ABOUT"))
     title.addEventListener("click", (e) => {
@@ -121,8 +132,8 @@ const init = () => {
 // START HERE
 window.addEventListener("load", () => { 
     init()
-    // on first boot load games page
+    // on first boot load blog posts
     if( !locationHashChanged() )
-        loadPost("games.md");
+        loadAllPosts()
 })
 
